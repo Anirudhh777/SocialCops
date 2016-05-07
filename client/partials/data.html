@@ -1,0 +1,52 @@
+<div class="container">
+	<div id="goBack">
+	<a href="#" class="btn btn-primary" role="button">Go Back</a>
+	<a href="#/stats" class="btn btn-success" role="button">Stats</a>
+			<label id="search">Search: <input ng-model="searchText"></label>
+	</div>
+	<div>
+		<h4>Click to Filter</h4>
+		<a href="#/stats" class="btn btn-success btn-xs" role="button">Matches Won</a>
+		<a href="#/stats" class="btn btn-danger btn-xs" role="button">Matches Lost</a>
+		<a href="#/stats" class="btn btn-success btn-xs" role="button">Toss Won</a>
+		<a href="#/stats" class="btn btn-danger btn-xs" role="button">Toss Lost</a>
+		<a href="#/stats" class="btn btn-warning btn-xs" role="button">0-30</a>
+		<a href="#/stats" class="btn btn-success btn-xs" role="button">30-50</a>
+		<a href="#/stats" class="btn btn-success btn-xs" role="button">50-100</a>
+		<a href="#/stats" class="btn btn-success btn-xs" role="button">100+</a>
+		<a href="#/stats" class="btn btn-info btn-xs" role="button">1st Innings</a>
+		<a href="#/stats" class="btn btn-info btn-xs" role="button">2nd Innings</a>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Opposition</th>
+				<th>Ground</th>
+				<th>Toss</th>
+				<th>Runs Scored</th>
+				<th>Batting Innings</th>
+				<th>Wickets</th>
+				<th>Stumpings</th>
+				<th>Runs Conceded</th>
+				<th>Result</th>
+				<th>Margin</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="sachin in sachinData | filter:searchText">
+			    <td>{{sachin.opposition}}</td>
+			    <td>{{sachin.ground}}</td>
+			    <td>{{sachin.toss}}</td>
+			    <td>{{sachin.batting_score}}</td>
+			    <td>{{sachin.batting_innings}}</td>
+			    <td>{{sachin.wickets}}</td>
+			    <td>{{sachin.stumps}}</td>
+			    <td>{{sachin.runs_conceded}}</td>
+			    <td>{{sachin.match_result}}</td>
+			    <td>{{sachin.result_margin}}</td>
+			   	<td>{{sachin.date}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

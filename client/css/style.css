@@ -1,0 +1,63 @@
+body{
+    	padding-right: 0px !important;
+    }
+
+#backgroundImg{
+	width: 100%;
+	height: 100%;  
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0; 
+	background-image: url(./sachin.jpeg);
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-attachment: fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#matches{
+	margin-top: 80px;
+}
+
+#matches, #avg, #runs, #hund, #fifty{
+	text-align: center;
+	margin-right: 570px;
+	margin-bottom: 30px;
+	color: #BABA19;
+}
+
+#matches h5, #avg h5, #runs h5, #hund h5, #fifty h5{
+	color: #010028;
+}
+
+#heading h1{
+	margin-left: 100px;
+	font-size: 50px;
+	text-decoration: underline;
+	color: #010028;
+}
+
+#heading h5{
+	margin-left: 250px;
+	color: white;
+	font-size: 12px;
+}
+
+#buttons{
+	margin-left: 280px;
+	margin-top: 60px;
+}
+
+#goBack{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#search{
+	margin-left: 700px;
+}
+
