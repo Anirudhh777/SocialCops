@@ -225,4 +225,4 @@ myapp.controller('dataController', function($scope, dataFactory, $location) {
 				$scope.sachinData = data;
 			})
 		}
-	})
+})
