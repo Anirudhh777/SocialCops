@@ -1,6 +1,49 @@
-<div class="pull-right" id="goBack">
-	<a href="#" class="btn btn-primary" role="button">Go Back</a>
-	<a href="#/data" class="btn btn-success" role="button">Data</a>
+<div ng-controller="statsController">
+<div class="row" id="goBack">
+	<div class="col-sm-8">
+		<a href="#" class="btn btn-primary" role="button">Main</a>
+		<a href="#/data" class="btn btn-success" role="button">Data</a>
+	</div>
+	<div class="col-sm-4 pull-right form-group">
+		<form role="form">
+			<h4><label>Filter by Year </label></h4>
+			<div class="col-xs-3">
+				<select class="form-control" ng-model="year.select">
+				    <option>1990</option>
+				    <option>1991</option>
+				    <option>1992</option>
+				    <option>1993</option>
+				    <option>1994</option>
+				    <option>1995</option>
+				    <option>1996</option>
+				    <option>1997</option>
+				    <option>1998</option>
+				    <option>1999</option>
+				    <option>2000</option>
+				    <option>2001</option>
+				    <option>2002</option>
+				    <option>2003</option>
+				    <option>2004</option>
+				    <option>2005</option>
+				    <option>2006</option>
+				    <option>2007</option>
+				    <option>2008</option>
+				    <option>2009</option>
+				    <option>2010</option>
+				    <option>2011</option>
+				    <option>2012</option>
+			  	</select>
+			</div>
+			  <input type="submit" value="Send" class="btn btn-success" ng-click="changeYear()">
+		</form>
+	</div>
 </div>
-
-<h5>Lets go crazy with highCharts</h5>
+ <div class="text-center">
+ 	<fusioncharts 
+    width="600" 
+    height="400"
+    type="pie3d"
+    datasource="{{myDataSource}}"
+></fusioncharts>
+</div>
+</div>

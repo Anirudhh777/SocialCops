@@ -1,22 +1,32 @@
-<div class="container">
-	<div id="goBack">
-	<a href="#" class="btn btn-primary" role="button">Go Back</a>
-	<a href="#/stats" class="btn btn-success" role="button">Stats</a>
-			<label id="search">Search: <input ng-model="searchText"></label>
+<div class="row" id="goBack">
+	<div class="col-sm-8">
+		<a href="#" class="btn btn-primary" role="button">Main</a>
+		<a href="#/stats" class="btn btn-success" role="button">Stats</a>
 	</div>
-	<div>
-		<h4>Click to Filter</h4>
-		<a href="#/stats" class="btn btn-success btn-xs" role="button">Matches Won</a>
-		<a href="#/stats" class="btn btn-danger btn-xs" role="button">Matches Lost</a>
-		<a href="#/stats" class="btn btn-success btn-xs" role="button">Toss Won</a>
-		<a href="#/stats" class="btn btn-danger btn-xs" role="button">Toss Lost</a>
-		<a href="#/stats" class="btn btn-warning btn-xs" role="button">0-30</a>
-		<a href="#/stats" class="btn btn-success btn-xs" role="button">30-50</a>
-		<a href="#/stats" class="btn btn-success btn-xs" role="button">50-100</a>
-		<a href="#/stats" class="btn btn-success btn-xs" role="button">100+</a>
-		<a href="#/stats" class="btn btn-info btn-xs" role="button">1st Innings</a>
-		<a href="#/stats" class="btn btn-info btn-xs" role="button">2nd Innings</a>
+	<div class="col-sm-4 pull-right">
+		<h4><label>Search: <input type="search" ng-model="searchText"></label></h4>
 	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<h4>
+			<label>Filter by 
+				<a ng-click="reloadPage()" class="btn btn-info btn-xs" role="button">All</a>
+				<a ng-click="matchesWon()" class="btn btn-success btn-xs" role="button">Matches Won</a>
+				<a ng-click="matchesLost()" class="btn btn-danger btn-xs" role="button">Matches Lost</a>
+				<a ng-click="tossWon()" class="btn btn-success btn-xs" role="button">Toss Won</a>
+				<a ng-click="tossLost()" class="btn btn-danger btn-xs" role="button">Toss Lost</a>
+				<a ng-click="lessThirty()" class="btn btn-warning btn-xs" role="button">0-30</a>
+				<a ng-click="thirtyFifty()" class="btn btn-success btn-xs" role="button">30-50</a>
+				<a ng-click="halfCentury()" class="btn btn-success btn-xs" role="button">50-100</a>
+				<a ng-click="hundredPlus()" class="btn btn-success btn-xs" role="button">100+</a>
+				<a ng-click="inningsOne()" class="btn btn-info btn-xs" role="button">1st Innings</a>
+				<a ng-click="inningsTwo()" class="btn btn-info btn-xs" role="button">2nd Innings</a>
+			</label>
+		</h4>
+	</div>
+</div>
+<div ng-show="sachinData">
 	<table class="table">
 		<thead>
 			<tr>
