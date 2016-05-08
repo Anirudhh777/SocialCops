@@ -4,7 +4,11 @@
 		<a href="#/stats" class="btn btn-success" role="button">Stats</a>
 	</div>
 	<div class="col-sm-4 pull-right">
-		<h4><label>Search: <input type="search" ng-model="searchText"></label></h4>
+		<h4>
+			<label>Search: 
+				<input type="search" ng-model="searchText">
+			</label>
+		</h4>
 	</div>
 </div>
 <div class="row">
@@ -24,6 +28,9 @@
 				<a ng-click="inningsTwo()" class="btn btn-info btn-xs" role="button">2nd Innings</a>
 			</label>
 		</h4>
+		<div class="pull-right">
+			<p>* denotes not out</p>
+		</div>
 	</div>
 </div>
 <div ng-show="sachinData">

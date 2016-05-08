@@ -1,49 +1,58 @@
 <div ng-controller="statsController">
-<div class="row" id="goBack">
-	<div class="col-sm-8">
-		<a href="#" class="btn btn-primary" role="button">Main</a>
-		<a href="#/data" class="btn btn-success" role="button">Data</a>
+	<div class="row" id="goBack">
+		<div class="col-sm-8">
+			<a href="#" class="btn btn-primary" role="button">Main</a>
+			<a href="#/data" class="btn btn-success" role="button">Data</a>
+		</div>
+		<div class="col-sm-4 pull-right form-group">
+			<form role="form">
+				<h4>
+					<label>Filter by Year </label>
+				</h4>
+				<div class="col-xs-3">
+					<select class="form-control" ng-model="year.select">
+					    <option>1990</option>
+					    <option>1991</option>
+					    <option>1992</option>
+					    <option>1993</option>
+					    <option>1994</option>
+					    <option>1995</option>
+					    <option>1996</option>
+					    <option>1997</option>
+					    <option>1998</option>
+					    <option>1999</option>
+					    <option>2000</option>
+					    <option>2001</option>
+					    <option>2002</option>
+					    <option>2003</option>
+					    <option>2004</option>
+					    <option>2005</option>
+					    <option>2006</option>
+					    <option>2007</option>
+					    <option>2008</option>
+					    <option>2009</option>
+					    <option>2010</option>
+					    <option>2011</option>
+					    <option>2012</option>
+				  	</select>
+				</div>
+				  	<input type="submit" value="Send" class="btn btn-success" ng-click="changeYear()">
+			</form>
+		</div>
 	</div>
-	<div class="col-sm-4 pull-right form-group">
-		<form role="form">
-			<h4><label>Filter by Year </label></h4>
-			<div class="col-xs-3">
-				<select class="form-control" ng-model="year.select">
-				    <option>1990</option>
-				    <option>1991</option>
-				    <option>1992</option>
-				    <option>1993</option>
-				    <option>1994</option>
-				    <option>1995</option>
-				    <option>1996</option>
-				    <option>1997</option>
-				    <option>1998</option>
-				    <option>1999</option>
-				    <option>2000</option>
-				    <option>2001</option>
-				    <option>2002</option>
-				    <option>2003</option>
-				    <option>2004</option>
-				    <option>2005</option>
-				    <option>2006</option>
-				    <option>2007</option>
-				    <option>2008</option>
-				    <option>2009</option>
-				    <option>2010</option>
-				    <option>2011</option>
-				    <option>2012</option>
-			  	</select>
-			</div>
-			  <input type="submit" value="Send" class="btn btn-success" ng-click="changeYear()">
-		</form>
+	 <div class="text-center">
+	 	<fusioncharts 
+		    width="550" 
+		    height="350"
+		    type="pie3d"
+		    datasource="{{myDataSource}}">
+		</fusioncharts>
 	</div>
-</div>
- <div class="text-center">
- 	<fusioncharts 
-    width="600" 
-    height="400"
-    type="pie3d"
-    datasource="{{myDataSource}}"
-></fusioncharts>
-</div>
+	<div class="text-center" id="statsPage">
+		<h4 id="topH4">India has Won {{fiftyPlus}} matches where Sachin has scored more than 50 runs</h4>
+		<h4 id="statsH4">Sachin has been not out* {{notOut}} number of times</h4>
+		<h4 id="statsH4">Has scored 100+ runs {{firstInnings}} times while batting in the first innings (That is {{firstInningsPercent}}% of his total centuries)</h4>
+		<h4 id="statsH4">{{wickets}} total wickets & conceded 6850 runs at an average of </h4>
+		<br><br>
+	</div>
 </div>

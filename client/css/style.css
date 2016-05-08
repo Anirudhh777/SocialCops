@@ -60,3 +60,22 @@ input[type=search] {
     -webkit-appearance: none;
 }
 
+#statsPage {
+	background-color: #32A675;
+	position:absolute;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    margin-top: 480px;	
+}
+
+#topH4{
+	margin-top: 40px;
+}
+
+#statsH4{
+	margin-top: 20px;
+}
+

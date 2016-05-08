@@ -33,9 +33,12 @@ myapp.controller('dataController', function($scope, dataFactory, $location) {
 		// console.log($scope.sachinData);
 		var fifty = 0;
 		var hundered = 0;
-		var totalRuns = 0
-		var gamesPlayed = $scope.sachinData.length
+		var totalRuns = 0;
+		var didNotBat = 0;
 		for (var i=0; i<$scope.sachinData.length;i++){
+				if($scope.sachinData[i].batting_score == "DNB" || $scope.sachinData[i].batting_score == "TDNB"){
+					didNotBat += 1
+				}
 				if($scope.sachinData[i].batting_score >= 50 && $scope.sachinData[i].batting_score < 100){
 					fifty += 1;
 				}
@@ -44,9 +47,16 @@ myapp.controller('dataController', function($scope, dataFactory, $location) {
 				}
 				if($scope.sachinData[i].batting_score != "DNB" && $scope.sachinData[i].batting_score != "TDNB"){
 					if($scope.sachinData[i].batting_score.charAt(1) == "*" || $scope.sachinData[i].batting_score.charAt(2) == "*" || $scope.sachinData[i].batting_score.charAt(3) == "*"){
+							didNotBat += 1;
 							var asterix = $scope.sachinData[i].batting_score.slice(0, -1);
 							var convertAsterix = parseInt(asterix);
 							totalRuns += convertAsterix;
+						if(convertAsterix >= 50 && convertAsterix <100){
+							fifty += 1;
+						}
+						if(convertAsterix >= 100){
+							hundered += 1;
+						}
 					}else{
 						var score = $scope.sachinData[i].batting_score;
 						var convertScore = parseInt(score);
@@ -54,7 +64,9 @@ myapp.controller('dataController', function($scope, dataFactory, $location) {
 					}
 				}
 			}
+			var gamesPlayed = $scope.sachinData.length - didNotBat;
 			var average = totalRuns/gamesPlayed;
+			// console.log(gamesPlayed);
 			// console.log("Average batting_score " + average);
 			// console.log("Total runs score " + totalRuns);
 			// console.log("Number of half centuries is " + fifty);
