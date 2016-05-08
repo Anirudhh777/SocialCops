@@ -118,7 +118,6 @@ myapp.controller('statsController', function($scope , dataFactory) {
 	}
 
 	$scope.firstInningsPercent = (($scope.firstInnings/hunderedPlus) * 100).toFixed(2);
-
 	$scope.changeYear = function(){
 		var halfCentury = 0;
 		var hunderedPlus = 0;
